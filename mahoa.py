@@ -1,5 +1,3 @@
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
 Plaintext="LeThiTuongVy"
 k=23
 chucaithuong = "abcdefghijklmnopqrstuvwxyz"
