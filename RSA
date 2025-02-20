@@ -1,0 +1,24 @@
+from sympy import mod_inverse
+# Khóa công khai và khóa bí mật
+p, q = 17, 23
+n = p * q
+phi_n = (p - 1) * (q - 1)
+e = 5
+d = mod_inverse(e, phi_n)
+
+# Chuyển đổi thông điệp thành số
+message = "LeThiTuongVy"
+message_numbers = [ord(char) for char in message]
+
+# Mã hóa RSA
+cipher_numbers = [pow(m, e, n) for m in message_numbers]
+
+print("Thông điệp gốc:", message)
+print("Dạng số:", message_numbers) 
+print("Mã hóa:", cipher_numbers)
+
+# Giải mã để kiểm tra
+decrypted_numbers = [pow(c, d, n) for c in cipher_numbers]
+decrypted_message = "".join(chr(num) for num in decrypted_numbers)
+
+print("Giải mã:", decrypted_message)
